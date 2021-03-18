@@ -6,7 +6,7 @@ VERSION
     1.0
     
 AUTHOR
-	SHIRLEY ALQUICIRA, HELY SALGADO
+	
     
 DESCRIPTION
 	Make the reverse complement of DNA sequence
@@ -23,4 +23,5 @@ USAGE
     % python reverse-complement -i
 
 '''
+
 
