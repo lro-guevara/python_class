@@ -66,9 +66,11 @@ def characters():
 characters()
 
 #Funcion para buscar autores y palabras claves
-def Identificacion(autoria,key_terms):
+def Identificacion(autoria,key_terms,cant):
     #Guardamos datos del autor y palabras clave de la lista
-    datos = f'({autoria}[AUTH] AND ({key_terms[0]}[Title] OR {key_terms[1]}[Title]))'
+    for i in cant:
+        datos = f'({autoria}[AUTH] AND ({key_terms[i]}[Title]))'
+
     #Buscamos los datos en la base de datos
     handle = Entrez.esearch(db="pubmed", term=datos)
     #Leemos y guardamos
@@ -87,6 +89,9 @@ def Identificacion(autoria,key_terms):
 #Pedir datos de busqueda al usuario
 key_terms = []
 autoria = input("Ingrese nombre del autor(a): ")
-key_terms.append = input("Ingrese dos palabras claves a buscar separadas por un enter: ")
-key_terms.append = input()
-Identificacion(autoria, key_terms)
+cant = int(input("Cantidad de palabras que desea buscar: "))
+
+for i in cant:
+    key_terms.append = input("Ingrese palabra clave: ")
+
+Identificacion(autoria, key_terms,cant)
